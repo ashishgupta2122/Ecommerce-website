@@ -1,12 +1,15 @@
 const express = require('express');
+const app = express();
+const cors = require('cors');
 const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 
 dotenv.config();  // ⚠️ Load env BEFORE using it
+app.use(cors());
 
 const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
-const app = express();
+
 
 // Middleware
 app.use(express.json());
