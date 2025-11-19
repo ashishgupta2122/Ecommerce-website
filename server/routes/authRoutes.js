@@ -1,10 +1,25 @@
 const express = require('express');
 const router = express.Router();
-const authController = require('../controllers/authController');
 
+const {
+    registerUser,
+    loginUser,
+    getUserProfile,
+    getAllUsers
+} = require('../controllers/authController');
 
-router.post('/register', authController.registerUser);
-router.post('/login', authController.loginUser);
+const authMiddleware = require('../middlewares/authMiddleware');
 
+// Register User
+router.post('/register', registerUser);
+
+// Login User
+router.post('/login', loginUser);
+
+// Get logged-in user profile
+router.get('/profile', authMiddleware, getUserProfile);
+
+// Get all users (Admin only)
+router.get('/users', authMiddleware, getAllUsers);
 
 module.exports = router;

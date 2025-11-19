@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 // REGISTER USER
 const registerUser = async (req, res) => {
-    const { username, email, password } = req.body;
+    const { username, email, password, role } = req.body;
 
     try {
         if (!username || !email || !password) {
@@ -21,7 +21,8 @@ const registerUser = async (req, res) => {
         const newUser = new User({
             username,
             email,
-            password: hashedPassword
+            password: hashedPassword,
+            role: role || "user"   // DEFAULT ROLE = user
         });
 
         await newUser.save();
@@ -31,7 +32,8 @@ const registerUser = async (req, res) => {
             user: {
                 id: newUser._id,
                 username: newUser.username,
-                email: newUser.email
+                email: newUser.email,
+                role: newUser.role
             }
         });
 
@@ -60,14 +62,20 @@ const loginUser = async (req, res) => {
         }
 
         const token = jwt.sign(
-            { id: user._id },
+            { id: user._id, role: user.role },   // ADD ROLE TO TOKEN
             process.env.JWT_SECRET,
             { expiresIn: '1h' }
         );
 
         return res.status(200).json({
             message: 'Login successful',
-            token
+            token,
+            user: {
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                role: user.role
+            }
         });
 
     } catch (error) {
@@ -75,4 +83,39 @@ const loginUser = async (req, res) => {
     }
 };
 
-module.exports = { registerUser, loginUser };
+// GET USER PROFILE
+const getUserProfile = async (req, res) => {
+    try {
+        if (!req.user || !req.user.id) {
+            return res.status(401).json({ message: 'Unauthorized' });
+        }
+
+        const user = await User.findById(req.user.id).select('-password');
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        return res.status(200).json(user);
+
+    } catch (error) {
+        return res.status(500).json({ message: 'Server error', error: error.message });
+    }
+}
+
+// GET ALL USERS (ADMIN ONLY)
+const getAllUsers = async (req, res) => {
+    try {
+        if (req.user.role !== 'admin') {  // FIXED CONDITION
+            return res.status(403).json({ message: 'Access Denied - Admin Only' });
+        }
+
+        const users = await User.find().select('-password');
+        return res.status(200).json(users);
+
+    } catch (error) {
+        return res.status(500).json({ message: 'Server error', error: error.message });
+    }
+}
+
+module.exports = { registerUser, loginUser, getUserProfile, getAllUsers };
