@@ -1,0 +1,126 @@
+/* Footer main container */
+.footer {
+  width: 100%;
+  background: linear-gradient(135deg, #0f172a, #1f2937); /* new modern gradient */
+  color: #f9fafb;
+  padding: 2.5rem 1.5rem 1.5rem;
+}
+
+/* Content wrapper */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* mobile first */
+  gap: 2rem;
+}
+
+/* Each column */
+.footer .col {
+  flex: 1;
+}
+
+/* Column title */
+.footer .title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #e5e7eb; /* thoda light heading */
+}
+
+/* General text */
+.footer .text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #cbd5f5; /* soft light blue-grey */
+}
+
+/* Links styled text */
+.footer .link {
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: 0.35rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer .link:hover {
+  color: #fbbf24; /* warm yellow hover */
+  transform: translateX(2px);
+}
+
+/* Contact item row */
+.footer .c-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer .c-item svg {
+  font-size: 0.9rem;
+  color: #fbbf24; /* icons thoda highlight */
+}
+
+/* Bottom bar */
+.bottom-bar {
+  border-top: 1px solid rgba(148, 163, 184, 0.4); /* soft border */
+  margin-top: 2rem;
+  padding-top: 1rem;
+}
+
+.bottom-bar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bottom-bar .text {
+  font-size: 0.8rem;
+  color: #9ca3af; /* muted text */
+}
+
+/* ✅ Tablet (>= 600px) */
+@media (min-width: 600px) {
+  .footer {
+    padding: 3rem 2rem 1.8rem;
+  }
+
+  .footer-content {
+    flex-direction: row;
+    flex-wrap: wrap; /* agar width kam ho toh neeche aa sake */
+    column-gap: 2rem;
+  }
+
+  .footer .col {
+    flex: 1 1 220px; /* min width per col */
+  }
+
+  .bottom-bar-content {
+    text-align: center;
+  }
+}
+
+/* ✅ Larger tablet / Desktop (>= 992px) */
+@media (min-width: 992px) {
+  .footer {
+    padding: 3.5rem 3rem 2rem;
+  }
+
+  .footer-content {
+    gap: 2.5rem;
+  }
+
+  .footer .title {
+    font-size: 1.05rem;
+  }
+
+  .footer .text {
+    font-size: 0.9rem;
+  }
+
+  .bottom-bar-content {
+    text-align: left;
+  }
+}

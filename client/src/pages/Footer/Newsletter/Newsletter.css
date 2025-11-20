@@ -1,0 +1,167 @@
+/* Base (mobile-first) */
+.newsletter-section {
+  width: 100%;
+  padding: 2.5rem 1.5rem;
+  background: #111; /* dark footer-like section */
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-content {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Small title */
+.newsletter-content .small-text {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #bbbbbb;
+  margin-bottom: 0.5rem;
+}
+
+/* Main heading */
+.newsletter-content .big-text {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Form section */
+.newsletter-content .form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: stretch;
+  margin-bottom: 0.9rem;
+}
+
+.newsletter-content .form input {
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.newsletter-content .form input::placeholder {
+  color: #888;
+}
+
+.newsletter-content .form .btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: #f4b400; /* accent color */
+  color: #111;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.newsletter-content .form .btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+  background: #ffc94c;
+}
+
+/* Privacy text */
+.newsletter-content .text {
+  font-size: 0.8rem;
+  color: #cccccc;
+  margin-bottom: 1.3rem;
+}
+
+/* Social icons */
+.newsletter-content .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.newsletter-content .social-icons svg {
+  padding: 0.55rem;
+  border-radius: 50%;
+  border: 1px solid #444;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.newsletter-content .social-icons svg:hover {
+  background: #f4b400;
+  color: #111;
+  border-color: #f4b400;
+  transform: translateY(-1px);
+}
+
+/* Tablet (>= 600px) */
+@media (min-width: 600px) {
+  .newsletter-section {
+    padding: 3rem 2rem;
+  }
+
+  .newsletter-content .big-text {
+    font-size: 1.8rem;
+  }
+
+  .newsletter-content .form {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .newsletter-content .form input {
+    max-width: 340px;
+  }
+
+  .newsletter-content .form .btn {
+    width: auto;
+    white-space: nowrap;
+  }
+}
+
+/* Tablet / small laptop (>= 768px) */
+@media (min-width: 768px) {
+  .newsletter-section {
+    padding: 3.5rem 3rem;
+  }
+
+  .newsletter-content {
+    text-align: left;
+  }
+
+  .newsletter-content .small-text {
+    text-align: left;
+  }
+
+  .newsletter-content .big-text {
+    font-size: 2rem;
+  }
+
+  .newsletter-content .form {
+    justify-content: flex-start;
+  }
+
+  .newsletter-content .social-icons {
+    justify-content: flex-start;
+  }
+}
+
+/* Larger screens (>= 1024px) */
+@media (min-width: 1024px) {
+  .newsletter-section {
+    padding: 4rem 4rem;
+  }
+
+  .newsletter-content .big-text {
+    font-size: 2.2rem;
+  }
+}

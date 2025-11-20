@@ -1,0 +1,112 @@
+.main-header {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Header container */
+.header-content {
+  max-width: 1200px;
+  height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Left Section */
+.left {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navigation Menu */
+.left ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.left ul li {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.left ul li:hover {
+  color: #2874f0;
+}
+
+/* Center Logo */
+.center {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2874f0;
+}
+
+/* Right Icons */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.right svg {
+  transition: color 0.3s ease;
+}
+
+.right svg:hover {
+  color: #2874f0;
+}
+
+/* Cart Icon */
+.cart-icon {
+  position: relative;
+}
+
+/* Badge (optional future use) */
+
+/* Responsive Design */
+
+/* 📱 Mobile Screen */
+@media (max-width: 768px) {
+  .header-content {
+    height: 60px;
+  }
+
+  .left ul {
+    display: none; /* Hide menu on mobile */
+  }
+
+  .center {
+    font-size: 24px;
+  }
+
+  .right {
+    gap: 15px;
+    font-size: 22px;
+  }
+}
+
+/* 📱 Small devices - Logo center */
+@media (max-width: 500px) {
+  .center {
+    font-size: 22px;
+  }
+}
+
+/* 📱 Extra small devices */
+@media (max-width: 400px) {
+  .right {
+    gap: 12px;
+    font-size: 20px;
+  }
+}

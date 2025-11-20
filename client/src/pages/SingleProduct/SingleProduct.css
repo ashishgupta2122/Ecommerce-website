@@ -1,0 +1,235 @@
+/* Outer wrapper */
+.single-product-main-content {
+  width: 100%;
+  padding: 2rem 1.5rem;
+  background: #f9fafb;
+}
+
+/* Centered layout */
+.single-product-main-content .layout {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main product section: image + details */
+.single-product-page {
+  display: flex;
+  flex-direction: column; /* mobile first */
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Left: image block */
+.single-product-page .left {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-product-page .left img {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Right: details block */
+.single-product-page .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Product name */
+.single-product-page .right .name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Price */
+.single-product-page .right .price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #16a34a;
+}
+
+/* Description */
+.single-product-page .right .desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+/* Cart buttons area */
+.cart-buttons {
+  margin-top: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  align-items: flex-start;
+}
+
+/* Quantity selector */
+.quantity-buttons {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.quantity-buttons span {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  min-width: 34px;
+  text-align: center;
+  user-select: none;
+}
+
+.quantity-buttons span:first-child,
+.quantity-buttons span:last-child {
+  background: #f3f4f6;
+  font-weight: 600;
+}
+
+/* Add to cart button */
+.add-to-cart-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  background: #111827;
+  color: #f9fafb;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-to-cart-button svg {
+  font-size: 0.95rem;
+}
+
+.add-to-cart-button:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.35);
+}
+
+/* Divider line */
+.divider {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 1.5rem 0;
+}
+
+/* Info section (category + share) */
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.title-bold {
+  font-weight: 600;
+  color: #111827;
+}
+
+.info-item .text {
+  color: #4b5563;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.social-icons svg {
+  padding: 0.35rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.social-icons svg:hover {
+  background: #111827;
+  color: #f9fafb;
+  border-color: #111827;
+  transform: translateY(-1px);
+}
+
+/* Related products spacing */
+.single-product-main-content .layout > .related-products {
+  margin-top: 2rem;
+}
+
+/* ✅ Tablet (>= 768px) */
+@media (min-width: 768px) {
+  .single-product-main-content {
+    padding: 3rem 2rem;
+  }
+
+  .single-product-page {
+    flex-direction: row; /* side-by-side image + details */
+    gap: 2.5rem;
+  }
+
+  .single-product-page .right .name {
+    font-size: 1.6rem;
+  }
+
+  .single-product-page .right .price {
+    font-size: 1.25rem;
+  }
+
+  .cart-buttons {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* ✅ Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+  .single-product-main-content {
+    padding: 3.5rem 0;
+  }
+
+  .single-product-page .left img {
+    max-width: 420px;
+  }
+
+  .single-product-page .right .name {
+    font-size: 1.8rem;
+  }
+
+  .single-product-page .right .desc {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,82 @@
+/* Outer container */
+.products-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* Section heading */
+.sec-heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #111827;
+}
+
+/* Products grid */
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* mobile: 2 columns */
+  gap: 1rem;
+}
+
+/* Make sure every product card behaves nicely inside grid */
+.products > * {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover effect */
+.products > *:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
+}
+
+/* ✅ Small tablets (>= 600px) */
+@media (min-width: 600px) {
+  .products-container {
+    padding: 2.5rem 2rem;
+  }
+
+  .sec-heading {
+    font-size: 1.6rem;
+  }
+
+  .products {
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columns */
+    gap: 1.2rem;
+  }
+}
+
+/* ✅ Tablets / small laptops (>= 768px) */
+@media (min-width: 768px) {
+  .products-container {
+    padding: 3rem 2.5rem;
+  }
+
+  .sec-heading {
+    font-size: 1.7rem;
+  }
+
+  .products {
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 columns */
+    gap: 1.4rem;
+  }
+}
+
+/* ✅ Larger desktops (>= 1200px) */
+@media (min-width: 1200px) {
+  .products-container {
+    padding: 3rem 0;
+  }
+
+  .products {
+    gap: 1.6rem;
+  }
+}

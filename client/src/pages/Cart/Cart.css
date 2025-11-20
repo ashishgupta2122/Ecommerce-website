@@ -1,0 +1,106 @@
+/* Fullscreen overlay + panel wrapper */
+.cart-panel {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: auto;
+}
+
+/* Dark transparent background */
+.opac-layer {
+  flex: 1;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+/* Right side cart panel */
+.cart-content {
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -8px 0 18px rgba(15, 23, 42, 0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1rem;
+  animation: slideInCart 0.25s ease-out forwards;
+}
+
+/* Slide-in animation */
+@keyframes slideInCart {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* Header: title + close button */
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Heading text */
+.cart-header .heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Close button */
+.close-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #6b7280;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.close-btn svg {
+  font-size: 1rem;
+}
+
+.close-btn:hover {
+  background: #f3f4f6;
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+/* Text inside close button */
+.close-text {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+}
+
+/* ✅ Mobile-first: panel already full height, width 100% with max 420px */
+
+/* ✅ Tablets / small laptops (>= 768px) */
+@media (min-width: 768px) {
+  .cart-content {
+    padding: 1.5rem 1.25rem;
+    max-width: 440px;
+  }
+
+  .cart-header .heading {
+    font-size: 1.2rem;
+  }
+}
+
+/* ✅ Larger desktops (>= 1024px) */
+@media (min-width: 1024px) {
+  .cart-content {
+    max-width: 460px;
+  }
+}
