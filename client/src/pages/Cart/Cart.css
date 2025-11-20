@@ -84,7 +84,53 @@
   font-size: 0.7rem;
 }
 
-/* ✅ Mobile-first: panel already full height, width 100% with max 420px */
+/* Empty cart state */
+.empty-cart {
+  flex: 1;
+  padding: 1.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  text-align: center;
+}
+
+/* Empty icon */
+.empty-icon {
+  font-size: 3rem;
+  color: #9ca3af;
+}
+
+/* Empty text */
+.empty-text {
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* Return button */
+.return-cta {
+  margin-top: 0.4rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  outline: none;
+  background: #111827;
+  color: #f9fafb;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.return-cta:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.3);
+}
 
 /* ✅ Tablets / small laptops (>= 768px) */
 @media (min-width: 768px) {
@@ -95,6 +141,14 @@
 
   .cart-header .heading {
     font-size: 1.2rem;
+  }
+
+  .empty-text {
+    font-size: 1rem;
+  }
+
+  .empty-icon {
+    font-size: 3.2rem;
   }
 }
 
